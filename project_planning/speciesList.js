@@ -5,7 +5,6 @@ let requestOptions = {
   };
 
   let regionCode = "US"
-  
   fetch(`https://api.ebird.org/v2/product/spplist/${regionCode}`, requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))

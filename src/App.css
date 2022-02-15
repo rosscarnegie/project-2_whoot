@@ -1,38 +1,141 @@
-.App {
-  text-align: center;
-}
+* {
+  padding: 0;
+  margin: 0;
+  border: none}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.appFrame {
+  background: white;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  height: 98vh;
+  width: 96vw}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.cover {
+  background: orange;
+  height: 20vh}
+
+.navBar {
+  background: teal;
+  height: 7vh}
+
+main {
+  border-top:     1vh;
+  border-bottom:  1vh;
+  border-left:    2vw;
+  border-right:   2vw;
+  border-style:   solid;
+  border-color: white;
+  height:         62vh;
+  padding:        1vh 2vw 2vh 2vw;
+  overflow:       scroll;
+  display: grid}
+
+.thumbNailsList {
+  display: none;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;}
+
+.infoSheet {
+  background:   pink;  
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 21vh auto;}
+
+.thumbNail {
+  background-color: green;
+  height: 21.333vh;
+  width: 1fr;
+  margin-bottom: 1vh}
+
+.picture {
+  background-color: grey;
+  height: 1fr;
+  width:   auto;
+  grid-area: 1 / 1 / 2 / 2;
+  margin-right: 1vw}
+
+.factsAndSightings {
+  background-color: red;
+  height: 1fr;
+  width: auto;
+  grid-area: 1 / 2 / 1 / 3;
+  margin-left: 1vw}
+
+.information {
+  margin-top: 0.5vh;
+  overflow: scroll;
+  grid-area: 2 / 1 / 2 / 3}
+  
+footer {
+  background: black;
+  height: 7vh}
+
+
+@media screen and (min-width: 680px) {
+  .navBar, footer {
+    height: 5vh}
+
+  main {
+    height: 64vh;}
+
+  .infoSheet {
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr  2fr;}
+
+  .thumbNailsList {
+    grid-template-columns: 1fr 1fr;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .thumbNail {
+    margin: 1vh;
   }
-  to {
-    transform: rotate(360deg);
+
+  .picture {
+    grid-area: 1 / 2 / 2 / 3;
+    margin-left: 1vh;
+    margin-right: 0;}
+    
+  .factsAndSightings {
+    height: 44vh;
+    grid-area: 2 / 2 / 3 / 3;
+    margin-left: 1vh;
+    margin-top: 0.5vh}
+    
+    .information {
+      grid-area: 1 / 1 / 3 / 2}
+}
+
+@media screen and (min-width: 1200px) {
+
+  .appFrame {
+    max-width: 1000px}
+
+  main {
+    border-left:    1vw;
+    border-right:   1vw;
+    border-style:   solid;
+    border-color: white;
+    padding:        1vh 1vw 1vh 1vw;}
+
+  .infoSheet {
+    grid-template-columns: 5fr 3fr;
   }
+
+  .thumbNailsList {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr}
+  
+  .thumbNail {
+    margin: 1vh;
+    height: 20.666vh}
+    
+  .picture, .factsAndSightings {
+    margin-left: 1vh;
+    margin-right: 0;}
+    
+  .factsAndSightings {
+    height: 2fr;}
 }
