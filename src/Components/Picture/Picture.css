@@ -1,0 +1,19 @@
+.picture {
+    background-color: grey;
+    height: 1fr;
+    width:   auto;
+    grid-area: 1 / 1 / 2 / 2;
+    margin-right: 1vw}
+
+    @media screen and (min-width: 680px) {
+        .picture {
+            grid-area: 1 / 2 / 2 / 3;
+            margin-left: 1vh;
+            margin-right: 0;}
+    }
+
+    @media screen and (min-width: 1200px) {
+        .picture {
+            margin-left: 1vh;
+            margin-right: 0;}
+    }

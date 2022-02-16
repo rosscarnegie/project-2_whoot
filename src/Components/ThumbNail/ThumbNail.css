@@ -1,0 +1,18 @@
+.thumbNail {
+    background-color: green;
+    height: 21.333vh;
+    width: 1fr;
+    margin-bottom: 1vh}
+
+
+@media screen and (min-width: 680px) {
+    .thumbNail {
+        margin: 1vh;
+      }
+}
+
+@media screen and (min-width: 1200px) {
+    .thumbNail {
+        margin: 1vh;
+        height: 20.666vh}
+}

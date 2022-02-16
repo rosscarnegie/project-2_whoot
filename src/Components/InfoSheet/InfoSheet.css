@@ -1,0 +1,11 @@
+.infoSheet {
+    background:   pink;  
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 21vh auto;}
+
+
+    @media screen and (min-width: 1200px) {
+        .infoSheet {
+            grid-template-columns: 5fr 3fr;
+          }
+    }
