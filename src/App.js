@@ -13,8 +13,8 @@ function App() {
         <Cover />
         <NavBar/>
       </header>
-      {/*<ThumbNailsList />*/}
-        <InfoSheet/>
+      {/*<InfoSheet/>*/}
+      <ThumbNailsList />  
         <Footer />
     </div>);
 }

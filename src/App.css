@@ -3,6 +3,10 @@
   margin: 0;
   border: none}
 
+  .main, .picture, .factsAndSightings {
+    border-radius: 10px;
+  }
+
 .appFrame {
   background: white;
   position: absolute;
@@ -21,7 +25,7 @@ main {
   border-right:   2vw;
   border-style:   solid;
   border-color: white;
-  height:         62vh;
+  height:         60vh;
   padding:        1vh 2vw 2vh 2vw;
   overflow:       scroll;
   display: grid}
@@ -29,7 +33,7 @@ main {
 @media screen and (min-width: 680px) {
 
   main {
-    height: 64vh;} 
+    height: 62vh;} 
   }
 
 @media screen and (min-width: 1200px) {

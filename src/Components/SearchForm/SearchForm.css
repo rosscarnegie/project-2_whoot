@@ -1,0 +1,15 @@
+form {display: grid; 
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr;
+font-size: 2vh;}
+
+input {height: 2.5vh;
+        width: 15vw;}
+
+#searchButton{
+    width: 10vw;
+    margin-left: 2vw;
+    grid-row-start: }
+
+label {grid-column-start: 1}
+

@@ -4,7 +4,12 @@ import './Footer.css'
 let  Footer = () => {
 
     return (
-        <footer></footer>
+        <footer>
+            <ul>
+                <li>Report An Issue</li>
+                <li>Privacy</li>
+            </ul>
+        </footer>
     )
 }
 
