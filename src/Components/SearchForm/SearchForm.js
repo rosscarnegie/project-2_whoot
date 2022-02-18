@@ -1,16 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './SearchForm.css'
 
-let  SearchForm = () => {
+let  SearchForm = ({handleSubmit, handleInputChange, latitude, longitude}) => {
 
+    
     return (
-       <form>
-            <label>Lat: </label>
-            <input type='text'></input>
-            <label>Long: </label>
-            <input type='text'></input>
-            <input type='submit' value="Find" id="searchButton"></input>
-        </form>
+        <form className='coordForm' onSubmit={handleSubmit}>
+        <input type='text' name='latitude' placeholder='Latitude' value={latitude} onChange={handleInputChange}/>
+        <input type='text' name='longitude' placeholder='Longitude' value={longitude} onChange={handleInputChange}/>
+        <button>Find</button>
+      </form>
     )
 }
 

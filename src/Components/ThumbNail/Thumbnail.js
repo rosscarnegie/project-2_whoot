@@ -1,11 +1,17 @@
 import React from 'react';
 import './ThumbNail.css'
+import ThumbNailStartData from './ThumbNailStartData'
 
-let  ThumbNail = (comNam, sciNam) => {
+let  ThumbNail = ({latitude, longitude, handleSubmit}) => {
 
-    return (
-        <div className="thumbNail"></div>
-    )
+    const mappedThumbnails = ThumbNailStartData.map((singleThumbnail, index) => {   
+    
+        return(
+
+            <div key={index} className="thumbNail"><p>{singleThumbnail.comName}</p></div>
+        )
+    })
+
 }
 
 export default ThumbNail; 
