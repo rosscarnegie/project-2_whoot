@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Cover from './Components/Cover/Cover'
 import NavBar from './Components/NavBar/NavBar'
 import ThumbNailsList from './Components/ThumbNailsList/ThumbNailsList'
@@ -9,7 +9,7 @@ import './App.css';
 
 
 function App() {
-  const startThumbails = [
+  const startThumbnails = [
     {comName: "Bird1",
     sciName: "Birdus Unus"},
     {comName: "Bird2",
@@ -21,7 +21,9 @@ function App() {
     {comName: "Bird5",
     sciName: "Birdus Cinqus"},
   ]
-  const [currentThumbNails, setThumbNails] = useState(startThumbails);
+  
+  const [currentThumbNails, setThumbNails] = useState(startThumbnails);
+  
   const [currentCoord, setCoord] = useState({
     latitude: "",
     longitude: "",
@@ -29,27 +31,30 @@ function App() {
 
 const handleChange = (event) => {
   setCoord({...currentCoord, [event.target.name]: event.target.value})
-  setThumbNails({...currentThumbNails, [event.target.name]: event.target.value})
+  //setThumbNails({...currentThumbNails, [event.target.name]: event.target.value})
 }
 
 const handleSubmit = (event) => {
   event.preventDefault();
-  
+
   const requestOptions = {
     method: 'GET',
     headers: {"X-eBirdApiToken": "3ehbfu8dqaf"},
     redirect: 'follow'};
 
-fetch(`https://api.ebird.org/v2/data/obs/geo/recent?lat=${currentCoord.latitude}&lng=${currentCoord.longitude}&sort=date&dist=50&back=30`, requestOptions)
-    .then(response => response.text())
+  fetch(`https://api.ebird.org/v2/data/obs/geo/recent?lat=${currentCoord.latitude}&lng=${currentCoord.longitude}&sort=date&dist=50&back=30`, requestOptions)
+    .then(response => response.json())
     .then(result => setThumbNails(result))
     .then(result => console.log(result))
-    .catch(error => console.log('error', error))
+    .catch(error => console.log('error', error));
     console.log(currentCoord);
     setCoord({latitude: "", longitude: ""})
-    console.log(currentThumbNails)
-  }
+    console.log(currentThumbNails)}
 
+    const mappedThumbnails = currentThumbNails.map((singleThumbnail, index) => {
+      return(
+      <div key={index} className="thumbNail"><p>{singleThumbnail.comName}</p></div>
+    )})
   
   return (
     <div className='appFrame'>
@@ -64,15 +69,7 @@ fetch(`https://api.ebird.org/v2/data/obs/geo/recent?lat=${currentCoord.latitude}
 {/*   <NavBar/> */}  
       </header>
       <main className="thumbNailsList">
-      <div className="thumbNail"></div>
-      <div className="thumbNail"></div>
-      <div className="thumbNail"></div>
-      <div className="thumbNail"></div>
-      <div className="thumbNail"></div>
-      <div className="thumbNail"></div>
-      <div className="thumbNail"></div>
-      <div className="thumbNail"></div>
-      <div className="thumbNail"></div>
+      {mappedThumbnails ? mappedThumbnails : 'Loading...'}
         </main>
       
  {/*  <InfoSheet/>
