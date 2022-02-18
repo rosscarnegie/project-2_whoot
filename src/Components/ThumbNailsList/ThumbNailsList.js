@@ -11,8 +11,10 @@ let ThumbNailsList = ({latitude, longitude, handleSubmit, displayedThumbs}) => {
 
     return (
         <div className='thumbNail' key={index}>
+            <div className='slider'>
             <p>{singleThumbnail.comName}</p>
-            <p>{singleThumbnail.sciName}</p>
+            <p><i>{singleThumbnail.sciName}</i></p>
+            </div>
         </div>
         )
     })

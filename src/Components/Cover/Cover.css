@@ -1,3 +1,6 @@
 .cover {
     background: orange;
-    height: 20vh}
+    height: 20vh;
+background-image: url('../../Images/coverLong.png');
+background-size: cover;}
+

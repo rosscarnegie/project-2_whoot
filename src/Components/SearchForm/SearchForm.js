@@ -6,8 +6,8 @@ let  SearchForm = ({handleSubmit, handleInputChange, latitude, longitude}) => {
     
     return (
         <form className='coordForm' onSubmit={handleSubmit}>
-        <input type='text' name='latitude' placeholder='Latitude' value={latitude} onChange={handleInputChange}/>
-        <input type='text' name='longitude' placeholder='Longitude' value={longitude} onChange={handleInputChange}/>
+        <div id='lat'><input type='text'  name='latitude' placeholder='Latitude' value={latitude} onChange={handleInputChange}/></div>
+        <div id ='long'><input type='text'  name='longitude' placeholder='Longitude' value={longitude} onChange={handleInputChange}/></div>
         <button>Find</button>
       </form>
     )

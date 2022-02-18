@@ -4,6 +4,8 @@ footer {
     color: white;
     display: flex;
     flex-wrap: wrap;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px
   }
   footer ul {
     display: inline-block;
