@@ -1,4 +1,0 @@
-My Coordinates:  latitude = 33.995670;
-                 longitude = -84.766370;
-
-My API Key: 3ehbfu8dqaf
